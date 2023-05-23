@@ -1,5 +1,5 @@
 import unittest
-from leet_gym.leetcode_DSA.hashmap import Summation
+from leetcode_dsa.hashmap import *
 
 class HashmapTest(unittest.TestCase):
     """

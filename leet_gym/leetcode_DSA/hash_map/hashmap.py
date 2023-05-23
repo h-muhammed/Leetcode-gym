@@ -56,6 +56,23 @@ class FindDisappears:
             if ind in check: continue 
             else: result.append(ind)
         return result
+    
+class CheckDuplicate:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        """itype: List[int], rtype: bool
+        return true if any duplicates available
+        else return false
+        """
+        check_duplicate = {}
+        for idx in range(len(nums)):
+            check_duplicate[nums[idx]] = 0
+        for idx in range(len(nums)):
+            check_duplicate[nums[idx]] += 1
+        values = check_duplicate.values()
+        if max(values) > 1:
+            return True
+        else: return False
+
 # Using the special variable 
 # __name__
 if __name__=="__main__":
@@ -77,3 +94,7 @@ if __name__=="__main__":
     nums = [4,3,2,7,8,2,3,1]
     solve = FindDisappears()
     print(solve.findDisappearedNumbers(nums))
+
+    nums = [4,3,2,7,8,2,3,1]
+    solve = CheckDuplicate()
+    print(solve.containsDuplicate(nums))
